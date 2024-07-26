@@ -1,0 +1,98 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
+
+[Serializable]
+public struct FacingData
+{
+    public int faceValue;
+
+    public Vector3 direction;
+}
+
+public class Dice : MonoBehaviour
+{
+
+    public List<Player> playersThatTouched;
+
+    public List<FacingData> facings = new List<FacingData>();
+
+    public Rigidbody rb;
+
+    public float minStrenght;
+    public float maxStrenght;
+
+    public float stopSpeed = 3f;
+
+    public bool wasKicked = false;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+
+    private void FixedUpdate()
+    {
+        if (wasKicked)
+        {
+            if (rb.velocity.magnitude < stopSpeed)
+            {
+                wasKicked = false;
+                Tablero.instance.MoveToken(playersThatTouched[0].token, DetermineFaceValue());
+                playersThatTouched.Clear();
+            }
+        }
+    }
+    /*/
+    private void OnCollisionEnter(Collision collision)
+    {
+        Player player = collision.gameObject.GetComponent<Player>();
+        if (player != null)
+        {
+            if (!playersThatTouched.Contains(player))
+            {
+                playersThatTouched.Add(player);
+                Kick(player.transform.position);
+            }
+        }
+    }
+    /**/
+
+    public void PlayerKick(Player player)
+    {
+        if (player != null)
+        {
+            if (!playersThatTouched.Contains(player))
+            {
+                playersThatTouched.Add(player);
+                Kick(player.transform.position);
+            }
+        }
+    }
+
+    private void Kick(Vector3 from)
+    {
+        wasKicked = true;
+        rb.AddForce((transform.position - from).normalized * Random.Range(minStrenght, maxStrenght));
+    }
+
+    public int DetermineFaceValue()
+    {
+        float max = -1f;
+        int match = 0;
+        for (int i = 0; i < facings.Count; i++)
+        {
+            float dotValue = Vector3.Dot(transform.rotation * facings[i].direction, Vector3.up);
+            if (max < dotValue)
+            {
+                max = dotValue;
+                match = facings[i].faceValue;
+            }
+        }
+        return match;
+    }
+}
