@@ -7,7 +7,7 @@ public class Events : MonoBehaviour
 {
     public float duration;
 
-    public void Play(Transform target)
+    public virtual void Play(Transform target)
     {
         if (target != null)
         {
