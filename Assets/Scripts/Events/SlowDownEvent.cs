@@ -8,13 +8,11 @@ public class SlowDownEvent : Events
     [SerializeField]
     GameObject fallingObject;
     [SerializeField]
+    GameObject slowDownObject;
+    [SerializeField]
     float objectFallDistance;
     [SerializeField]
-    float slowDownValue;
-    [SerializeField]
-    float freezePlayerTime;
-    [SerializeField]
-    float slowDownTime;
+    float freezePlayerTime = 1;
 
 
     public override void Play(Transform target)
@@ -23,15 +21,12 @@ public class SlowDownEvent : Events
     }
 
     IEnumerator SlowDown(Transform target)
-    {               
-        float initialPlayerSpeed = target.GetComponent<Player>().speed;
+    {                      
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-        GameObject objectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), Quaternion.identity);
+        GameObject fallingObjectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), fallingObject.transform.rotation);
         yield return new WaitForSeconds(freezePlayerTime);
-        Destroy(objectToDestroy);
+        Destroy(fallingObjectToDestroy);
+        Instantiate(slowDownObject, new Vector3(target.position.x, slowDownObject.transform.position.y, target.position.z), fallingObject.transform.rotation);
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        target.GetComponent<Rigidbody>().velocity /= slowDownValue;
-        yield return new WaitForSeconds(slowDownTime);
-        target.GetComponent<Player>().speed = initialPlayerSpeed;
     }
 }
