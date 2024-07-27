@@ -43,5 +43,16 @@ public class UiManager : MonoBehaviour
         playerText.text.color = player.color;
     }
 
+    public void UpdateUI(Player player)
+    {
+        for (int i = 0; i < playerTexts.Count; i++)
+        {
+            if (playerTexts[i].player == player)
+            {
+                playerTexts[i].text.text = player.score.ToString();
+            }
+        }
+    }
+
 
 }

@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
         player2.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
 
+
+
     }
 
     public void LoadScene(int id)
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
     public void AddScoreTo(Player player, int score)
     {
         player.score += score;
+        UiManager.instance.UpdateUI(player);
     }
 
 }
