@@ -606,6 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f845bafc135afdb42ad5a754f2c4863e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cells: {fileID: 0}
   cellList:
   - {fileID: 6763168027110666972}
   - {fileID: 7746522889190942542}
@@ -906,7 +907,7 @@ Transform:
   m_GameObject: {fileID: 8713407723200619712}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
