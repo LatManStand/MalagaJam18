@@ -32,10 +32,10 @@ public class GameManager : MonoBehaviour
 
 
         player1.GetComponent<Player>().SetColor(Color.red);
-        player1.transform.DOMove(spawns[spawnId].position, 0.1f).Play();
+        player1.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
         player2.GetComponent<Player>().SetColor(Color.blue);
-        player2.transform.DOMove(spawns[spawnId].position, 0.1f).Play();
+        player2.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
 
     }

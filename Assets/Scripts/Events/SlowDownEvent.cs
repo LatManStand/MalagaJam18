@@ -24,7 +24,7 @@ public class SlowDownEvent : Events
 
     IEnumerator SlowDown(Transform target)
     {               
-        //float initialPlayerSpeed = target.GetComponent<Player>().speed;
+        float initialPlayerSpeed = target.GetComponent<Player>().speed;
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         GameObject objectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), Quaternion.identity);
         yield return new WaitForSeconds(freezePlayerTime);
@@ -32,6 +32,6 @@ public class SlowDownEvent : Events
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         target.GetComponent<Rigidbody>().velocity /= slowDownValue;
         yield return new WaitForSeconds(slowDownTime);
-        //target.GetComponent<Player>().speed = initialPlayerSpeed;
+        target.GetComponent<Player>().speed = initialPlayerSpeed;
     }
 }

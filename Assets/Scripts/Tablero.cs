@@ -23,6 +23,7 @@ public class Tablero : MonoBehaviour
 {
     public static Tablero instance;
 
+    public Transform cells;
     public List<Events> cellList;
     public List<TokenPos> tokens;
 
@@ -31,6 +32,15 @@ public class Tablero : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            cellList.Clear();
+            foreach (Transform transform in cells)
+            {
+                Events events = transform.GetComponent<Events>();
+                if (events != null)
+                {
+                    cellList.Add(events);
+                }
+            }
         }
         else
         {
