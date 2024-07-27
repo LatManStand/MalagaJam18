@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public List<Transform> spawns;
     public int spawnId = 0;
 
+    public float matchDuration = 60f;
+
     private void Awake()
     {
         if (instance == null)
@@ -38,7 +40,7 @@ public class GameManager : MonoBehaviour
         player2.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
 
-
+        StartGame();
 
     }
 
@@ -56,6 +58,16 @@ public class GameManager : MonoBehaviour
     {
         player.score += score;
         UiManager.instance.UpdateUI(player);
+    }
+
+    public void StartGame()
+    {
+        UiManager.instance.StartTimer();
+    }
+
+    public void EndMatch()
+    {
+            
     }
 
 }

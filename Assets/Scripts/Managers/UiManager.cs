@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+[Serializable]
 public class PlayerText
 {
     public Player player;
@@ -22,6 +24,8 @@ public class UiManager : MonoBehaviour
     public GameObject layout;
     public GameObject textPrefab;
     public List<PlayerText> playerTexts;
+    public TMP_Text timer;
+    public float time;
 
 
     private void Awake()
@@ -52,6 +56,29 @@ public class UiManager : MonoBehaviour
                 playerTexts[i].text.text = player.score.ToString();
             }
         }
+    }
+
+    public void StartTimer()
+    {
+        time = GameManager.instance.matchDuration;
+        TimeSpan ts = TimeSpan.FromSeconds((int)time);
+        timer.text = ts.ToString("mm':'ss'.'fff");
+        StartCoroutine(Timer());
+    }
+
+    public IEnumerator Timer()
+    {
+        while (time > 0)
+        {
+            yield return null;
+            time -= Time.deltaTime;
+            TimeSpan ts = TimeSpan.FromSeconds((int)time);
+            timer.text = ts.ToString("mm':'ss'.'fff");
+        }
+    }
+
+    public void EndMatch()
+    {
     }
 
 
