@@ -89,12 +89,12 @@ public class Dice : MonoBehaviour
 
     public int DetermineFaceValue()
     {
-        float max = -1f;
+        float max = Mathf.Infinity;
         int match = 0;
         for (int i = 0; i < facings.Count; i++)
         {
             float distance = Vector3.Distance(transform.position, facings[i].position.position);
-            if (max < distance)
+            if (max > distance)
             {
                 max = distance;
                 match = facings[i].faceValue;
