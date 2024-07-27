@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     public PlayerInput playerInput;
     public Vector3 movement;
 
+    private SpriteRenderer playerSprite;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,12 +25,14 @@ public class Player : MonoBehaviour
         token = Instantiate(tokenPrefab).GetComponent<Token>();
         token.player = this;
         Tablero.instance.InitialiseToken(token);
+
+        playerSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         GameManager.instance.InitialisePlayer(this);
     }
 
     public void FixedUpdate()
     {
-        transform.LookAt(rb.position + movement);
+       // transform.LookAt(rb.position + movement);
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
     }
 
@@ -52,5 +56,12 @@ public class Player : MonoBehaviour
     {
         movement.x = ctx.ReadValue<Vector2>().x;
         movement.z = ctx.ReadValue<Vector2>().y;
+        FlipPlayer(movement.x);
+    }
+
+    private void FlipPlayer(float x)
+    {
+        if (x  < 0) { playerSprite.flipX = true; }
+        else { playerSprite.flipX = false; }
     }
 }
