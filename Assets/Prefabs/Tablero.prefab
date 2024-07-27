@@ -546,6 +546,15 @@ MonoBehaviour:
   - {fileID: 8409678825228935234}
   - {fileID: 2296065610567620360}
   - {fileID: 754331832318057823}
+  characterAnimators:
+  - animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
+    character: 0
+  - animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
+    character: 1
+  - animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
+    character: 2
+  - animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
+    character: 3
   spawnId: 0
   matchDuration: 60
 --- !u!1 &7206378254245474685
