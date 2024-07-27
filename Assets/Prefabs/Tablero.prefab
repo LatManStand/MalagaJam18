@@ -523,10 +523,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   tokens: []
-  minXLimit: -3.3
-  maxXLimit: 3.7
-  minZLimit: -4.1
-  maxZLimit: 3.3
+  minXLimit: -12.3
+  maxXLimit: 15.1
+  minZLimit: -16.7
+  maxZLimit: 11
 --- !u!114 &8269238796027355950
 MonoBehaviour:
   m_ObjectHideFlags: 0

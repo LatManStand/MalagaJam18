@@ -43,6 +43,12 @@ public class AudioPlayer : MonoBehaviour
         audioSource.PlayOneShot(clip.Clip, clip.Volume);
     }
 
+    public void PlaySFX(int id)
+    {
+        var clip = sfxClips[id];
+        audioSource.PlayOneShot(clip.Clip, clip.Volume);
+    }
+
     public void PlayMusic(string name)
     {
         var clip = musicClips.Find(x => x.Clip.name == name);
