@@ -10,7 +10,7 @@ public struct FacingData
 {
     public int faceValue;
 
-    public Vector3 direction;
+    public Transform position;
 }
 
 public class Dice : MonoBehaviour
@@ -93,10 +93,10 @@ public class Dice : MonoBehaviour
         int match = 0;
         for (int i = 0; i < facings.Count; i++)
         {
-            float dotValue = Vector3.Dot(transform.rotation * facings[i].direction, Vector3.up);
-            if (max < dotValue)
+            float distance = Vector3.Distance(transform.position, facings[i].position.position);
+            if (max < distance)
             {
-                max = dotValue;
+                max = distance;
                 match = facings[i].faceValue;
             }
         }
