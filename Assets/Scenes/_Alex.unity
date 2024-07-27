@@ -2005,11 +2005,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0
   score: 0
-  fallingObject: {fileID: 0}
-  objectFallDistance: 0
-  slowDownValue: 0
-  freezePlayerTime: 0
-  slowDownTime: 0
+  fallingObject: {fileID: 124516767454103369, guid: 3ca0969e481f4e348bc6dcf11a071b08, type: 3}
+  slowDownObject: {fileID: 1807784295871781935, guid: f099bff30b21a844cbb33da867254e48, type: 3}
+  objectFallDistance: 5
+  freezePlayerTime: 1
 --- !u!114 &1134909024
 MonoBehaviour:
   m_ObjectHideFlags: 0
