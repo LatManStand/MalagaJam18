@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class AudioPlayer : MonoBehaviour
 {
 
@@ -15,7 +16,6 @@ public class AudioPlayer : MonoBehaviour
 
     public static AudioPlayer Instance;
 
-    [SerializeField]
     private AudioSource audioSource;
 
     [SerializeField]
@@ -29,6 +29,7 @@ public class AudioPlayer : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            audioSource = GetComponent<AudioSource>();
             DontDestroyOnLoad(gameObject);
         }
         else
