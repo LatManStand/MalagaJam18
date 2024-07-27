@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class TestingEvent : MonoBehaviour
 {
     [SerializeField]
-    GameObject Player;
+    Player player;
 
     private void Update()
     {
@@ -18,12 +18,19 @@ public class TestingEvent : MonoBehaviour
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {
             Events testEvent = EventManager.instance.EventsList[0];
-            EventManager.instance.PlayEvent(testEvent, Player.transform);
+            EventManager.instance.PlayEvent(testEvent, player);
             Debug.Log("Testing Event: " + testEvent);
-        } else if (Keyboard.current.digit2Key.wasPressedThisFrame)
+        }
+        else if (Keyboard.current.digit2Key.wasPressedThisFrame)
         {
             Events testEvent = EventManager.instance.EventsList[1];
-            EventManager.instance.PlayEvent(testEvent, Player.transform);
+            EventManager.instance.PlayEvent(testEvent, player);
+            Debug.Log("Testing Event: " + testEvent);
+        }
+        else if (Keyboard.current.digit3Key.wasPressedThisFrame)
+        {
+            Events testEvent = EventManager.instance.EventsList[2];
+            EventManager.instance.PlayEvent(testEvent, player);
             Debug.Log("Testing Event: " + testEvent);
         }
     }

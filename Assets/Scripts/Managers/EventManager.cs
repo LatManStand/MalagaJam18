@@ -15,9 +15,9 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public void PlayEvent(Events events, Transform player)
+    public void PlayEvent(Events events, Player player)
     {
-        events.Play(player);
+        events.Score(player);
     }
 
 
