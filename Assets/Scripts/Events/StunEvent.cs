@@ -20,7 +20,7 @@ public class StunEvent : Events
     IEnumerator Stun(Transform target)
     {
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
-        GameObject objectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), Quaternion.identity);
+        GameObject objectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), fallingObject.transform.rotation);
         yield return new WaitForSeconds(stunPlayerTime);
         Destroy(objectToDestroy);
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
