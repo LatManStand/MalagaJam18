@@ -1992,6 +1992,7 @@ GameObject:
   - component: {fileID: 1134909022}
   - component: {fileID: 1134909028}
   - component: {fileID: 1134909029}
+  - component: {fileID: 1134909030}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -2079,6 +2080,7 @@ MonoBehaviour:
   - {fileID: 1134909024}
   - {fileID: 1134909028}
   - {fileID: 1134909029}
+  - {fileID: 1134909030}
 --- !u!4 &1134909027
 Transform:
   m_ObjectHideFlags: 0
@@ -2122,6 +2124,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff26759783d6f7347a7af40a64316f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  score: 0
+  fallingObject: {fileID: 0}
+  objectFallDistance: 5
+  freezePlayerTime: 1
+--- !u!114 &1134909030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134909021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab976566f0ece34bb13e72a81747807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3

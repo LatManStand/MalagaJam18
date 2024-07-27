@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public int score;
     public Color color;
     public Character character;
+    public bool isStarOn;
 
     public PlayerInput playerInput;
     public Vector3 movement;
