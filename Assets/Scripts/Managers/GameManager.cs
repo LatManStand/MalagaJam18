@@ -48,7 +48,6 @@ public class GameManager : MonoBehaviour
     public void InitialisePlayer(Player player)
     {
         playerList.Add(player);
-        UiManager.instance.AddPlayerToUi(player);
     }
 
     public void AddScoreTo(Player player, int score)
