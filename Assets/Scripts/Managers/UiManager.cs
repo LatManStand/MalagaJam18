@@ -3,17 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class PlayerText
 {
     public Player player;
-    public TMP_Text text;
+    public ScoreText scoreText;
 
-    public PlayerText(Player player, TMP_Text text)
+    public PlayerText(Player player, ScoreText scoreText)
     {
         this.player = player;
-        this.text = text;
+        this.scoreText = scoreText;
     }
 }
 
@@ -45,9 +46,11 @@ public class UiManager : MonoBehaviour
     public void AddPlayerToUi(Player player)
     {
         GameObject text = Instantiate(textPrefab, layout.transform);
-        PlayerText playerText = new PlayerText(player, text.GetComponent<TMP_Text>());
-        playerText.text.color = player.color;
+        PlayerText playerText = new PlayerText(player, text.GetComponent<ScoreText>());
+        playerText.scoreText.text.color = player.color;
+        playerText.scoreText.icon.sprite = GameManager.instance.GetIconFor(player.character);
         playerTexts.Add(playerText);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(matchEndLayout.GetComponent<RectTransform>());
     }
 
     public void UpdateUI(Player player)
@@ -56,7 +59,7 @@ public class UiManager : MonoBehaviour
         {
             if (playerTexts[i].player == player)
             {
-                playerTexts[i].text.text = player.score.ToString();
+                playerTexts[i].scoreText.text.text = player.score.ToString();
             }
         }
     }
@@ -88,9 +91,11 @@ public class UiManager : MonoBehaviour
         GameManager.instance.playerList.Sort((a, b) => b.score.CompareTo(a.score));
         foreach (Player player in GameManager.instance.playerList)
         {
-            TMP_Text text = Instantiate(textPrefab, matchEndLayout.transform).GetComponent<TMP_Text>();
-            text.text = player.score.ToString();
-            text.color = player.color;
+            ScoreText scoreText = Instantiate(textPrefab, matchEndLayout.transform).GetComponent<ScoreText>();
+            scoreText.icon.sprite = GameManager.instance.GetIconFor(player.character);
+            scoreText.text.text = player.score.ToString();
+            scoreText.text.color = player.color;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(matchEndLayout.GetComponent<RectTransform>());
         }
     }
 

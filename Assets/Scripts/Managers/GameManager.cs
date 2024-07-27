@@ -1,7 +1,6 @@
 using DG.Tweening;
 using System;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -10,9 +9,9 @@ using UnityEngine.SceneManagement;
 public struct CharacterData
 {
     public Character character;
-    public AnimatorController animator;
+    public RuntimeAnimatorController animator;
     public Sprite icon;
-    public Sprite token;
+    public Color color;
 }
 
 
@@ -46,13 +45,13 @@ public class GameManager : MonoBehaviour
         PlayerInput player2 = PlayerInput.Instantiate(playerPrefab, controlScheme: "KeyboardRight", pairWithDevice: Keyboard.current);
 
 
-        player1.GetComponent<Player>().SetColor(Color.red);
-        player1.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         player1.GetComponent<Player>().character = Character.a;
+        player1.GetComponent<Player>().SetColor(GetColorFor(player1.GetComponent<Player>().character));
+        player1.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
-        player2.GetComponent<Player>().SetColor(Color.blue);
+        player2.GetComponent<Player>().character = Character.b;
+        player2.GetComponent<Player>().SetColor(GetColorFor(player2.GetComponent<Player>().character));
         player2.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
-        player1.GetComponent<Player>().character = Character.b;
         spawnId++;
 
         /*/
@@ -75,7 +74,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(id);
     }
 
-    public AnimatorController GetAnimatorFor(Character character)
+    public RuntimeAnimatorController GetAnimatorFor(Character character)
     {
         foreach (CharacterData animator in characterAnimators)
         {
@@ -99,16 +98,17 @@ public class GameManager : MonoBehaviour
         return null;
     }
 
-    public Sprite GetTokenFor(Character character)
+
+    public Color GetColorFor(Character character)
     {
         foreach (CharacterData animator in characterAnimators)
         {
             if (character == animator.character)
             {
-                return animator.token;
+                return animator.color;
             }
         }
-        return null;
+        return Color.black;
     }
 
     public void InitialisePlayer(Player player)

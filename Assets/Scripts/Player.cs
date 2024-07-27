@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
         token.GetComponent<MeshRenderer>().material.color = _color;
         UiManager.instance.AddPlayerToUi(this);
         token.transform.GetChild(0).GetChild(2).GetComponent<MeshRenderer>().material.color = _color;
+        animator.runtimeAnimatorController = GameManager.instance.GetAnimatorFor(character);
     }
 
     private void OnTriggerEnter(Collider other)
