@@ -23,6 +23,7 @@ public class UiManager : MonoBehaviour
 
     public GameObject layout;
     public GameObject textPrefab;
+    public GameObject matchEnd;
     public List<PlayerText> playerTexts;
     public TMP_Text timer;
     public float time;
@@ -76,10 +77,13 @@ public class UiManager : MonoBehaviour
             TimeSpan ts = TimeSpan.FromSeconds(time);
             timer.text = ts.ToString("mm':'ss");
         }
+        EndMatch();
     }
 
     public void EndMatch()
     {
+        matchEnd.SetActive(true);
+        Time.timeScale = 0f;
     }
 
 
