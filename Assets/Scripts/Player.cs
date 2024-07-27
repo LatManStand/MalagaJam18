@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
     public float speed;
     public int score;
     public Color color;
+    public Character character;
+    public bool isStarOn;
 
     public PlayerInput playerInput;
     public Vector3 movement;
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
 
         playerSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         GameManager.instance.InitialisePlayer(this);
+        animator.runtimeAnimatorController = GameManager.instance.GetAnimatorFor(character);
     }
 
     public void FixedUpdate()
