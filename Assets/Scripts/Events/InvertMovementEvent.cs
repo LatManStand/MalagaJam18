@@ -12,7 +12,6 @@ public class InvertMovementAxisEvent : Events
 
     IEnumerator InvertMovement(Transform target)
     {
-        // TODO: probarlo
         target.GetComponent<Player>().speed *= -1;
         yield return new WaitForSeconds(duration);
         target.GetComponent<Player>().speed *= -1;
