@@ -26,6 +26,11 @@ public class GameManager : MonoBehaviour
         PlayerInput player1 = PlayerInput.Instantiate(playerPrefab, controlScheme: "KeyboardLeft", pairWithDevice: Keyboard.current);
         PlayerInput player2 = PlayerInput.Instantiate(playerPrefab, controlScheme: "KeyboardRight", pairWithDevice: Keyboard.current);
 
+        player1.GetComponent<MeshRenderer>().material.color = Color.red;
+        player2.GetComponent<MeshRenderer>().material.color = Color.blue;
+        player1.GetComponent<Player>().token.GetComponent<MeshRenderer>().material.color = Color.red;
+        player2.GetComponent<Player>().token.GetComponent<MeshRenderer>().material.color = Color.blue;
+
     }
 
     public void LoadScene(int id)

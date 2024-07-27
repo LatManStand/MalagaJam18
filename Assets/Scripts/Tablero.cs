@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 
 [Serializable]
@@ -40,31 +41,37 @@ public class Tablero : MonoBehaviour
     public void InitialiseToken(Token token)
     {
         tokens.Add(new TokenPos(token, 0));
-        token.transform.Translate(cellList[0].transform.position);
+        token.transform.DOMove(cellList[0].transform.position, 0.1f).Play();
     }
 
 
     public void MoveToken(Token token, int movement, bool absolute = false)
     {
         Debug.Log("Moving");
-        TokenPos tokenPos = tokens[0];
-        foreach (TokenPos pos in tokens)
+        for (int i = 0; i < tokens.Count; i++)
         {
-            if (pos.token == token)
+            TokenPos tokenPos = tokens[i];
+            if (tokenPos.token == token)
             {
-                tokenPos = pos;
+                //Debug.Log(tokenPos.token);
+                //Debug.Log(tokenPos.pos);
+
+                int targetPos = tokenPos.pos + movement;
+                if (absolute)
+                {
+                    targetPos = movement;
+                }
+                while (targetPos >= cellList.Count)
+                {
+                    targetPos -= cellList.Count;
+                }
+                tokenPos.pos = targetPos;
+                Debug.Log(targetPos);
+                token.MoveTo(cellList[targetPos].transform);
+                tokens[i] = tokenPos;
+                break;
             }
         }
-        int targetPos = tokenPos.pos + movement;
-        if (absolute)
-        {
-            targetPos = movement;
-        }
-        while (targetPos > cellList.Count)
-        {
-            targetPos -= cellList.Count;
-        }
-        token.MoveTo(cellList[targetPos].transform);
     }
 
 
