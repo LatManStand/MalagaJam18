@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public GameObject tokenPrefab;
     public Token token;
     public Rigidbody rb;
+    public Animator animator;
     public float speed;
     public int score;
     public Color color;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
         playerInput = GetComponent<PlayerInput>();
         token = Instantiate(tokenPrefab).GetComponent<Token>();
         token.player = this;
@@ -63,6 +65,7 @@ public class Player : MonoBehaviour
         if (dice)
         {
             dice.PlayerKick(this);
+            animator.SetTrigger("Kick");
         }
     }
 
