@@ -13,7 +13,7 @@ public class Token : MonoBehaviour
 
     public void MoveTo(Transform target)
     {
-        AudioPlayer.Instance.PlaySFX(2);
+        AudioPlayer.Instance.PlaySFX(2, gameObject);
         Sequence sequence = DOTween.Sequence();
         sequence.Append(
             transform.DOMove(transform.position + Vector3.up * verticalOffset, verticalTimer).SetEase(Ease.InOutElastic)).Append(

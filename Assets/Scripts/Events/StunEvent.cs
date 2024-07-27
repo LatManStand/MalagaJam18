@@ -19,7 +19,7 @@ public class StunEvent : Events
 
     IEnumerator Stun(Transform target)
     {
-        AudioPlayer.Instance.PlaySFX(0);
+        AudioPlayer.Instance.PlaySFX(0, gameObject);
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         GameObject objectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), fallingObject.transform.rotation);
         yield return new WaitForSeconds(stunPlayerTime);
