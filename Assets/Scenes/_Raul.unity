@@ -1879,6 +1879,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dice
       objectReference: {fileID: 0}
+    - target: {fileID: 6138210838963118451, guid: ab831f54fcea8e74d8f60f67cd5958e7, type: 3}
+      propertyPath: facings.Array.data[0].faceValue
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138210838963118451, guid: ab831f54fcea8e74d8f60f67cd5958e7, type: 3}
+      propertyPath: facings.Array.data[1].faceValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138210838963118451, guid: ab831f54fcea8e74d8f60f67cd5958e7, type: 3}
+      propertyPath: facings.Array.data[2].faceValue
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138210838963118451, guid: ab831f54fcea8e74d8f60f67cd5958e7, type: 3}
+      propertyPath: facings.Array.data[3].faceValue
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138210838963118451, guid: ab831f54fcea8e74d8f60f67cd5958e7, type: 3}
+      propertyPath: facings.Array.data[4].faceValue
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138210838963118451, guid: ab831f54fcea8e74d8f60f67cd5958e7, type: 3}
+      propertyPath: facings.Array.data[5].faceValue
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

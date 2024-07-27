@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GameManager : MonoBehaviour
@@ -36,6 +37,12 @@ public class GameManager : MonoBehaviour
     public void LoadScene(int id)
     {
         SceneManager.LoadScene(id);
+    }
+
+
+    public void AddScoreTo(Player player, int score)
+    {
+        player.score += score;
     }
 
 }

@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Token token;
     public Rigidbody rb;
     public float speed;
+    public int score;
 
     public PlayerInput playerInput;
     public Vector3 movement;
