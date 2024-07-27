@@ -45,6 +45,7 @@ public class UiManager : MonoBehaviour
         GameObject text = Instantiate(textPrefab, layout.transform);
         PlayerText playerText = new PlayerText(player, text.GetComponent<TMP_Text>());
         playerText.text.color = player.color;
+        playerTexts.Add(playerText);
     }
 
     public void UpdateUI(Player player)
