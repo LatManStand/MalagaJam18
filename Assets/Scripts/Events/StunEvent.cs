@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class StunEvent : Events
         AudioPlayer.Instance.PlaySFX(0, gameObject);
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         GameObject objectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), fallingObject.transform.rotation);
+        objectToDestroy.transform.DOMove(target.transform.position, 2f);
         yield return new WaitForSeconds(stunPlayerTime);
         Destroy(objectToDestroy);
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
