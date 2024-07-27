@@ -5,9 +5,14 @@ using static UnityEngine.GraphicsBuffer;
 
 public class SpeedEvent : Events
 {
-
+    [SerializeField]
+    GameObject fallingObject;
+    [SerializeField]
+    float objectFallDistance;
     [SerializeField]
     float speedMultiplier;
+    [SerializeField]
+    float freezePlayerTime = 1;
 
 
     public override void Play(Transform target)
@@ -17,9 +22,14 @@ public class SpeedEvent : Events
 
     IEnumerator Speed(Transform target)
     {
-        float initialPlaye1rSpeed = target.GetComponent<Player>().speed;
+        target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+        GameObject fallingObjectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), fallingObject.transform.rotation);
+        yield return new WaitForSeconds(freezePlayerTime);
+        target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        Destroy(fallingObjectToDestroy);
+        float initialPlayerSpeed = target.GetComponent<Player>().speed;
         target.GetComponent<Player>().speed *= speedMultiplier;
         yield return new WaitForSeconds(duration);
-        target.GetComponent<Player>().speed = initialPlaye1rSpeed;
+        target.GetComponent<Player>().speed = initialPlayerSpeed;
     }
 }

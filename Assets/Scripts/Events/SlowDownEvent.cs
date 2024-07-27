@@ -10,7 +10,7 @@ public class SlowDownEvent : Events
     [SerializeField]
     GameObject slowDownObject;
     [SerializeField]
-    float objectFallDistance;
+    float objectFallDistance = 5;
     [SerializeField]
     float freezePlayerTime = 1;
 
