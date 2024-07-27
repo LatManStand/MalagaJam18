@@ -12,9 +12,11 @@ public class InvertMovementAxisEvent : Events
 
     IEnumerator InvertMovement(Transform target)
     {
+        target.GetComponent<Player>().animator.SetBool("Drunk", true);
         target.GetComponent<Player>().speed *= -1;
         yield return new WaitForSeconds(duration);
         target.GetComponent<Player>().speed *= -1;
+        target.GetComponent<Player>().animator.SetBool("Drunk", false);
     }
 
 }

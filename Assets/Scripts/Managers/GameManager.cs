@@ -7,10 +7,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public struct CharacterAnimator
+public struct CharacterData
 {
-    public AnimatorController animator;
     public Character character;
+    public AnimatorController animator;
+    public Sprite icon;
+    public Sprite token;
 }
 
 
@@ -20,7 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public List<Player> playerList;
     public List<Transform> spawns;
-    public List<CharacterAnimator> characterAnimators;
+    public List<CharacterData> characterAnimators;
     public int spawnId = 0;
 
     public float matchDuration = 60f;
@@ -46,9 +48,11 @@ public class GameManager : MonoBehaviour
 
         player1.GetComponent<Player>().SetColor(Color.red);
         player1.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
+        player1.GetComponent<Player>().character = Character.a;
         spawnId++;
         player2.GetComponent<Player>().SetColor(Color.blue);
         player2.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
+        player1.GetComponent<Player>().character = Character.b;
         spawnId++;
 
         /*/
@@ -73,11 +77,35 @@ public class GameManager : MonoBehaviour
 
     public AnimatorController GetAnimatorFor(Character character)
     {
-        foreach (CharacterAnimator animator in characterAnimators)
+        foreach (CharacterData animator in characterAnimators)
         {
             if (character == animator.character)
             {
                 return animator.animator;
+            }
+        }
+        return null;
+    }
+
+    public Sprite GetIconFor(Character character)
+    {
+        foreach (CharacterData animator in characterAnimators)
+        {
+            if (character == animator.character)
+            {
+                return animator.icon;
+            }
+        }
+        return null;
+    }
+
+    public Sprite GetTokenFor(Character character)
+    {
+        foreach (CharacterData animator in characterAnimators)
+        {
+            if (character == animator.character)
+            {
+                return animator.token;
             }
         }
         return null;
