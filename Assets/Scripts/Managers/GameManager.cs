@@ -1,16 +1,17 @@
 using DG.Tweening;
 using System;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public struct CharacterAnimator
+public struct CharacterData
 {
-    public AnimatorController animator;
     public Character character;
+    public RuntimeAnimatorController animator;
+    public Sprite icon;
+    public Color color;
 }
 
 
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public List<Player> playerList;
     public List<Transform> spawns;
-    public List<CharacterAnimator> characterAnimators;
+    public List<CharacterData> characterAnimators;
     public int spawnId = 0;
 
     public float matchDuration = 60f;
@@ -44,10 +45,12 @@ public class GameManager : MonoBehaviour
         PlayerInput player2 = PlayerInput.Instantiate(playerPrefab, controlScheme: "KeyboardRight", pairWithDevice: Keyboard.current);
 
 
-        player1.GetComponent<Player>().SetColor(Color.red);
+        player1.GetComponent<Player>().character = Character.a;
+        player1.GetComponent<Player>().SetColor(GetColorFor(player1.GetComponent<Player>().character));
         player1.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
-        player2.GetComponent<Player>().SetColor(Color.blue);
+        player2.GetComponent<Player>().character = Character.b;
+        player2.GetComponent<Player>().SetColor(GetColorFor(player2.GetComponent<Player>().character));
         player2.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
 
@@ -71,9 +74,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(id);
     }
 
-    public AnimatorController GetAnimatorFor(Character character)
+    public RuntimeAnimatorController GetAnimatorFor(Character character)
     {
-        foreach (CharacterAnimator animator in characterAnimators)
+        foreach (CharacterData animator in characterAnimators)
         {
             if (character == animator.character)
             {
@@ -81,6 +84,31 @@ public class GameManager : MonoBehaviour
             }
         }
         return null;
+    }
+
+    public Sprite GetIconFor(Character character)
+    {
+        foreach (CharacterData animator in characterAnimators)
+        {
+            if (character == animator.character)
+            {
+                return animator.icon;
+            }
+        }
+        return null;
+    }
+
+
+    public Color GetColorFor(Character character)
+    {
+        foreach (CharacterData animator in characterAnimators)
+        {
+            if (character == animator.character)
+            {
+                return animator.color;
+            }
+        }
+        return Color.black;
     }
 
     public void InitialisePlayer(Player player)

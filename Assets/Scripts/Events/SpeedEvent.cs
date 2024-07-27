@@ -22,6 +22,7 @@ public class SpeedEvent : Events
 
     IEnumerator Speed(Transform target)
     {
+        target.GetComponent<Player>().animator.SetBool("Coffee", true);
         target.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
         GameObject fallingObjectToDestroy = Instantiate(fallingObject, new Vector3(target.position.x, target.position.y + objectFallDistance, target.position.z), fallingObject.transform.rotation);
         yield return new WaitForSeconds(freezePlayerTime);
@@ -31,5 +32,6 @@ public class SpeedEvent : Events
         target.GetComponent<Player>().speed *= speedMultiplier;
         yield return new WaitForSeconds(duration);
         target.GetComponent<Player>().speed = initialPlayerSpeed;
+        target.GetComponent<Player>().animator.SetBool("Coffee", false);
     }
 }

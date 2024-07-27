@@ -547,14 +547,22 @@ MonoBehaviour:
   - {fileID: 2296065610567620360}
   - {fileID: 754331832318057823}
   characterAnimators:
-  - animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
-    character: 0
-  - animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
-    character: 1
-  - animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
-    character: 2
-  - animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
-    character: 3
+  - character: 0
+    animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
+    icon: {fileID: 21300000, guid: dc56f695a37f49d4a951788a169f9cc6, type: 3}
+    color: {r: 0.54901963, g: 0.2901961, b: 0.07450981, a: 1}
+  - character: 1
+    animator: {fileID: 9100000, guid: 5e1c5dea2a3f82d4d908cef25e199126, type: 2}
+    icon: {fileID: 21300000, guid: 452a7557c984c6242a0561d32dd2d8ca, type: 3}
+    color: {r: 0.35686275, g: 0.6745098, b: 0.18431373, a: 1}
+  - character: 2
+    animator: {fileID: 9100000, guid: b25883af1debc6348bfcb4027523f7a6, type: 2}
+    icon: {fileID: 21300000, guid: 73742d46a2584e74e8bdcc3d82add884, type: 3}
+    color: {r: 0.5686275, g: 0.30980393, b: 0.5921569, a: 1}
+  - character: 3
+    animator: {fileID: 9100000, guid: 01377dfa09773a84fbd00ed9f961b9ef, type: 2}
+    icon: {fileID: 0}
+    color: {r: 0.07058824, g: 0.050980397, b: 0.023529414, a: 1}
   spawnId: 0
   matchDuration: 60
 --- !u!1 &7206378254245474685
