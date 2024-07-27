@@ -76,9 +76,16 @@ public class Dice : MonoBehaviour
 
     private void Kick(Vector3 from)
     {
-        wasKicked = true;
         rb.AddForce((transform.position - from).normalized * Random.Range(minStrenght, maxStrenght));
+        Invoke(nameof(EnableWasKickedNextFrame), 0.1f);
     }
+
+    private void EnableWasKickedNextFrame()
+    {
+        wasKicked = true;
+    }
+
+
 
     public int DetermineFaceValue()
     {
