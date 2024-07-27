@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Player : MonoBehaviour
     public Rigidbody rb;
     public float speed;
     public int score;
+    public Color color;
 
     public PlayerInput playerInput;
     public Vector3 movement;
@@ -21,12 +23,20 @@ public class Player : MonoBehaviour
         token = Instantiate(tokenPrefab).GetComponent<Token>();
         token.player = this;
         Tablero.instance.InitialiseToken(token);
+        GameManager.instance.InitialisePlayer(this);
     }
 
     public void FixedUpdate()
     {
         transform.LookAt(rb.position + movement);
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+    }
+
+    public void SetColor(Color _color)
+    {
+        color = _color;
+        GetComponent<MeshRenderer>().material.color = _color;
+        token.GetComponent<MeshRenderer>().material.color = _color;
     }
 
     private void OnTriggerEnter(Collider other)
