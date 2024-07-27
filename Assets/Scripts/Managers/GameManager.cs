@@ -51,6 +51,17 @@ public class GameManager : MonoBehaviour
         player2.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
 
+        /*/
+        PlayerInput player3 = PlayerInput.Instantiate(playerPrefab, controlScheme: "Gamepad", pairWithDevice: Keyboard.current);
+        PlayerInput player4 = PlayerInput.Instantiate(playerPrefab, controlScheme: "Gamepad", pairWithDevice: Keyboard.current);
+
+        player3.GetComponent<Player>().SetColor(Color.green);
+        player3.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
+        spawnId++;
+        player4.GetComponent<Player>().SetColor(Color.yellow);
+        player4.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
+        spawnId++;
+        /**/
         StartGame();
 
     }
