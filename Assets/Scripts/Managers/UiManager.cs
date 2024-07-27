@@ -61,7 +61,7 @@ public class UiManager : MonoBehaviour
     public void StartTimer()
     {
         time = GameManager.instance.matchDuration;
-        TimeSpan ts = TimeSpan.FromSeconds((int)time);
+        TimeSpan ts = TimeSpan.FromSeconds(time);
         timer.text = ts.ToString("mm':'ss'.'fff");
         StartCoroutine(Timer());
     }
@@ -72,7 +72,7 @@ public class UiManager : MonoBehaviour
         {
             yield return null;
             time -= Time.deltaTime;
-            TimeSpan ts = TimeSpan.FromSeconds((int)time);
+            TimeSpan ts = TimeSpan.FromSeconds(time);
             timer.text = ts.ToString("mm':'ss'.'fff");
         }
     }

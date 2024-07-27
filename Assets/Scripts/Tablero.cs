@@ -57,7 +57,7 @@ public class Tablero : MonoBehaviour
 
     public void MoveToken(Token token, int movement, bool absolute = false)
     {
-        Debug.Log("Moving");
+        //Debug.Log("Moving");
         for (int i = 0; i < tokens.Count; i++)
         {
             TokenPos tokenPos = tokens[i];
@@ -76,7 +76,7 @@ public class Tablero : MonoBehaviour
                     targetPos -= cellList.Count;
                 }
                 tokenPos.pos = targetPos;
-                Debug.Log(targetPos);
+                //Debug.Log(targetPos);
                 token.MoveTo(cellList[targetPos].transform);
                 tokens[i] = tokenPos;
                 cellList[targetPos].Score(token.player);
