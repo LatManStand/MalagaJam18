@@ -1217,6 +1217,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: UiManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8405409049137752054, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405409049137752054, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405409049137752054, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405409049137752054, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405409049137752054, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405409049137752054, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1967,6 +1991,7 @@ GameObject:
   - component: {fileID: 1134909023}
   - component: {fileID: 1134909022}
   - component: {fileID: 1134909028}
+  - component: {fileID: 1134909029}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -2052,6 +2077,8 @@ MonoBehaviour:
   - {fileID: 1134909023}
   - {fileID: 1134909022}
   - {fileID: 1134909024}
+  - {fileID: 1134909028}
+  - {fileID: 1134909029}
 --- !u!4 &1134909027
 Transform:
   m_ObjectHideFlags: 0
@@ -2082,6 +2109,20 @@ MonoBehaviour:
   duration: 5
   score: 0
   speedMultiplier: 2
+--- !u!114 &1134909029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134909021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26759783d6f7347a7af40a64316f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 3
+  score: 0
 --- !u!4 &1146202175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2835372768698539773, guid: 391e3580aa194d445a3401f44d3e6ea3, type: 3}

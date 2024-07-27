@@ -39,5 +39,11 @@ public class TestingEvent : MonoBehaviour
             EventManager.instance.PlayEvent(testEvent, player);
             Debug.Log("Testing Event: " + testEvent);
         }
+        else if (Keyboard.current.digit5Key.wasPressedThisFrame)
+        {
+            Events testEvent = EventManager.instance.EventsList[4];
+            EventManager.instance.PlayEvent(testEvent, player);
+            Debug.Log("Testing Event: " + testEvent);
+        }
     }
 }
