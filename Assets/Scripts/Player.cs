@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     {
         color = _color;
         GetComponent<MeshRenderer>().material.color = _color;
-        token.GetComponent<MeshRenderer>().material.color = _color;
+        token.transform.GetChild(0).GetChild(2).GetComponent<MeshRenderer>().material.color = _color;
     }
 
     private void OnTriggerEnter(Collider other)
