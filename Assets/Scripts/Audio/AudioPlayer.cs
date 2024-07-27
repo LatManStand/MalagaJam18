@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioPlayer : MonoBehaviour
@@ -11,12 +13,15 @@ public class AudioPlayer : MonoBehaviour
     public class AudioClipData
     {
         public AudioClip Clip;
-        public float Volume;
+        public float Volume = 1f;
+        public float minPitch = 1f;
+        public float maxPitch = 1f;
     }
 
     public static AudioPlayer Instance;
 
     private AudioSource audioSource;
+    private AudioSource musicAudioSource;
 
     [SerializeField]
     private List<AudioClipData> musicClips;
@@ -30,7 +35,8 @@ public class AudioPlayer : MonoBehaviour
         {
             Instance = this;
             audioSource = GetComponent<AudioSource>();
-            DontDestroyOnLoad(gameObject);
+            musicAudioSource = gameObject.AddComponent<AudioSource>();
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -48,6 +54,7 @@ public class AudioPlayer : MonoBehaviour
             {
                 aS = go.AddComponent<AudioSource>();
             }
+            aS.pitch = Random.Range(clip.minPitch, clip.maxPitch);
             aS.PlayOneShot(clip.Clip, clip.Volume);
         }
         else
@@ -67,6 +74,7 @@ public class AudioPlayer : MonoBehaviour
             {
                 aS = go.AddComponent<AudioSource>();
             }
+            aS.pitch = Random.Range(clip.minPitch, clip.maxPitch);
             aS.PlayOneShot(clip.Clip, clip.Volume);
         }
         else
@@ -79,10 +87,19 @@ public class AudioPlayer : MonoBehaviour
     public void PlayMusic(string name)
     {
         var clip = musicClips.Find(x => x.Clip.name == name);
-        audioSource.clip = clip.Clip;
-        audioSource.volume = clip.Volume;
-        audioSource.loop = true;
-        audioSource.Play();
+        musicAudioSource.clip = clip.Clip;
+        musicAudioSource.volume = clip.Volume;
+        musicAudioSource.loop = true;
+        musicAudioSource.Play();
+    }
+
+    public void PlayMusic(int id)
+    {
+        var clip = musicClips[id];
+        musicAudioSource.clip = clip.Clip;
+        musicAudioSource.volume = clip.Volume;
+        musicAudioSource.loop = true;
+        musicAudioSource.Play();
     }
 
     public void SetMute(bool isMuted)

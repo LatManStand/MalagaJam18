@@ -48,15 +48,19 @@ public class Dice : MonoBehaviour
             }
         }
     }
-    
+
     private void OnCollisionEnter(Collision collision)
-    {GameObject go = collision.gameObject;
+    {
+        AudioPlayer.Instance.PlaySFX(5, gameObject);
+        /*
+        GameObject go = collision.gameObject;
         if (go == ground)
         {
-            AudioPlayer.Instance.PlaySFX(4, gameObject);
+            AudioPlayer.Instance.PlaySFX(5, gameObject);
         }
+         */
     }
-    
+
 
     public void PlayerKick(Player player)
     {

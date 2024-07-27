@@ -49,14 +49,28 @@ MonoBehaviour:
   sfxClips:
   - Clip: {fileID: 8300000, guid: a661b75a6a0e0794cb32dbb47c262bc4, type: 3}
     Volume: 1
+    minPitch: 1
+    maxPitch: 1
   - Clip: {fileID: 8300000, guid: 0febec9c99cbd7743b98e445038ff654, type: 3}
     Volume: 1
+    minPitch: 1
+    maxPitch: 1
   - Clip: {fileID: 8300000, guid: 853f6686d9607464084cf2acb5c39600, type: 3}
     Volume: 1
+    minPitch: 1
+    maxPitch: 1
   - Clip: {fileID: 8300000, guid: 5fb3888f526d3904f8618692c28298ab, type: 3}
     Volume: 1
+    minPitch: 1
+    maxPitch: 1
   - Clip: {fileID: 8300000, guid: 3ecda38831c6cad4e9b56b5d5f636f0b, type: 3}
     Volume: 1
+    minPitch: 1
+    maxPitch: 1
+  - Clip: {fileID: 8300000, guid: b638da7f8278c7d42b2aaea443551299, type: 3}
+    Volume: 1
+    minPitch: 0.7
+    maxPitch: 1.3
 --- !u!82 &5736665458378939460
 AudioSource:
   m_ObjectHideFlags: 0
