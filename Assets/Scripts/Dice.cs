@@ -21,6 +21,7 @@ public class Dice : MonoBehaviour
     public List<FacingData> facings = new List<FacingData>();
 
     public Rigidbody rb;
+    public GameObject ground;
 
     public float minStrenght;
     public float maxStrenght;
@@ -41,26 +42,21 @@ public class Dice : MonoBehaviour
         {
             if (rb.velocity.magnitude < stopSpeed)
             {
-                wasKicked = false;
                 Tablero.instance.MoveToken(playersThatTouched[0].token, DetermineFaceValue());
                 playersThatTouched.Clear();
+                wasKicked = false;
             }
         }
     }
-    /*/
+    
     private void OnCollisionEnter(Collision collision)
-    {
-        Player player = collision.gameObject.GetComponent<Player>();
-        if (player != null)
+    {GameObject go = collision.gameObject;
+        if (go == ground)
         {
-            if (!playersThatTouched.Contains(player))
-            {
-                playersThatTouched.Add(player);
-                Kick(player.transform.position);
-            }
+            AudioPlayer.Instance.PlaySFX(4, gameObject);
         }
     }
-    /**/
+    
 
     public void PlayerKick(Player player)
     {
@@ -70,6 +66,7 @@ public class Dice : MonoBehaviour
             {
                 playersThatTouched.Add(player);
                 Kick(player.transform.position);
+                AudioPlayer.Instance.PlaySFX(3, gameObject);
             }
         }
     }
@@ -89,6 +86,7 @@ public class Dice : MonoBehaviour
 
     public int DetermineFaceValue()
     {
+        AudioPlayer.Instance.PlaySFX(1, gameObject);
         float max = Mathf.Infinity;
         int match = 0;
         for (int i = 0; i < facings.Count; i++)

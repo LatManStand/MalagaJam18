@@ -122,9 +122,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  verticalTimer: 0.1
+  verticalTimer: 0.5
   verticalOffset: 2
-  horizontalTimer: 0.5
+  horizontalTimer: 0.8
 --- !u!1001 &870875591031795267
 PrefabInstance:
   m_ObjectHideFlags: 0
