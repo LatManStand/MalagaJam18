@@ -79,6 +79,7 @@ public class Tablero : MonoBehaviour
                 Debug.Log(targetPos);
                 token.MoveTo(cellList[targetPos].transform);
                 tokens[i] = tokenPos;
+                cellList[targetPos].Score(token.player);
                 break;
             }
         }
