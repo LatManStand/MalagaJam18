@@ -2014,7 +2014,7 @@ MonoBehaviour:
   duration: 0
   score: 0
   fallingObject: {fileID: 5579995616396168880, guid: 11274810ae3b65940a4515f44310c3f3, type: 3}
-  objectFallDistance: 3
+  objectFallDistance: 10
   stunPlayerTime: 5
 --- !u!114 &1134909023
 MonoBehaviour:
@@ -2108,7 +2108,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 5
   score: 0
+  fallingObject: {fileID: 124516767454103369, guid: 93e7fc6bf2f34864896de0c0972f8325, type: 3}
+  objectFallDistance: 5
   speedMultiplier: 2
+  freezePlayerTime: 1
 --- !u!114 &1134909029
 MonoBehaviour:
   m_ObjectHideFlags: 0

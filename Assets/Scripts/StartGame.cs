@@ -14,5 +14,6 @@ public class StartGame : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         tittle.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

@@ -1,8 +1,18 @@
 using DG.Tweening;
+using System;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+
+[Serializable]
+public struct CharacterAnimator
+{
+    public AnimatorController animator;
+    public Character character;
+}
+
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public List<Player> playerList;
     public List<Transform> spawns;
+    public List<CharacterAnimator> characterAnimators;
     public int spawnId = 0;
 
     public float matchDuration = 60f;
@@ -49,6 +60,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(id);
     }
 
+    public AnimatorController GetAnimatorFor(Character character)
+    {
+        foreach (CharacterAnimator animator in characterAnimators)
+        {
+            if (character == animator.character)
+            {
+                return animator.animator;
+            }
+        }
+        return null;
+    }
+
     public void InitialisePlayer(Player player)
     {
         playerList.Add(player);
@@ -67,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void EndMatch()
     {
-            
+
     }
 
 }

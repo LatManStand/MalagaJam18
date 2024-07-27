@@ -23,6 +23,8 @@ public class UiManager : MonoBehaviour
 
     public GameObject layout;
     public GameObject textPrefab;
+    public GameObject matchEnd;
+    public GameObject matchEndLayout;
     public List<PlayerText> playerTexts;
     public TMP_Text timer;
     public float time;
@@ -76,10 +78,20 @@ public class UiManager : MonoBehaviour
             TimeSpan ts = TimeSpan.FromSeconds(time);
             timer.text = ts.ToString("mm':'ss");
         }
+        EndMatch();
     }
 
     public void EndMatch()
     {
+        matchEnd.SetActive(true);
+        Time.timeScale = 0f;
+        GameManager.instance.playerList.Sort((a, b) => b.score.CompareTo(a.score));
+        foreach (Player player in GameManager.instance.playerList)
+        {
+            TMP_Text text = Instantiate(textPrefab, matchEndLayout.transform).GetComponent<TMP_Text>();
+            text.text = player.score.ToString();
+            text.color = player.color;
+        }
     }
 
 
