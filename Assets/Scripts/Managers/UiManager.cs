@@ -63,7 +63,7 @@ public class UiManager : MonoBehaviour
     {
         time = GameManager.instance.matchDuration;
         TimeSpan ts = TimeSpan.FromSeconds(time);
-        timer.text = ts.ToString("mm':'ss'.'fff");
+        timer.text = ts.ToString("mm':'ss");
         StartCoroutine(Timer());
     }
 
@@ -74,7 +74,7 @@ public class UiManager : MonoBehaviour
             yield return null;
             time -= Time.deltaTime;
             TimeSpan ts = TimeSpan.FromSeconds(time);
-            timer.text = ts.ToString("mm':'ss'.'fff");
+            timer.text = ts.ToString("mm':'ss");
         }
     }
 
