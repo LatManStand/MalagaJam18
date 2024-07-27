@@ -1,6 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public enum Character
+{
+    a,
+    b,
+    c,
+    d
+}
+
+
 public class Player : MonoBehaviour
 {
     public GameObject tokenPrefab;

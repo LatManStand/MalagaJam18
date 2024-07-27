@@ -79,6 +79,10 @@ public class Tablero : MonoBehaviour
                 {
                     targetPos -= cellList.Count;
                 }
+                while (targetPos < 0)
+                {
+                    targetPos += cellList.Count;
+                }
                 tokenPos.pos = targetPos;
                 //Debug.Log(targetPos);
                 token.MoveTo(cellList[targetPos].transform);
