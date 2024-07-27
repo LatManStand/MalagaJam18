@@ -3861,6 +3861,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2045554057798766610, guid: 3197ff3b3dbd1d84cb6106cb6c9e3e64, type: 3}
+      propertyPath: maxXLimit
+      value: 15.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045554057798766610, guid: 3197ff3b3dbd1d84cb6106cb6c9e3e64, type: 3}
+      propertyPath: maxZLimit
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045554057798766610, guid: 3197ff3b3dbd1d84cb6106cb6c9e3e64, type: 3}
+      propertyPath: minXLimit
+      value: -12.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045554057798766610, guid: 3197ff3b3dbd1d84cb6106cb6c9e3e64, type: 3}
+      propertyPath: minZLimit
+      value: -16.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6371635467625139765, guid: 3197ff3b3dbd1d84cb6106cb6c9e3e64, type: 3}
       propertyPath: m_Name
       value: Tablero
@@ -3997,10 +4013,6 @@ PrefabInstance:
     - target: {fileID: 991225446401045823, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3559683852304912983, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
-      propertyPath: m_text
-      value: 1:00.000
       objectReference: {fileID: 0}
     - target: {fileID: 6521932948930836977, guid: 33d44fa66fda3ba4d882ce75585eb0cd, type: 3}
       propertyPath: m_Name

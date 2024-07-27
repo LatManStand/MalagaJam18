@@ -26,6 +26,10 @@ public class Tablero : MonoBehaviour
     public Transform cells;
     public List<Events> cellList;
     public List<TokenPos> tokens;
+    public float minXLimit;
+    public float maxXLimit;
+    public float minZLimit;
+    public float maxZLimit;
 
     private void Awake()
     {

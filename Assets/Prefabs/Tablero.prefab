@@ -523,6 +523,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   tokens: []
+  minXLimit: -3.3
+  maxXLimit: 3.7
+  minZLimit: -4.1
+  maxZLimit: 3.3
 --- !u!114 &8269238796027355950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,6 +547,7 @@ MonoBehaviour:
   - {fileID: 2296065610567620360}
   - {fileID: 754331832318057823}
   spawnId: 0
+  matchDuration: 60
 --- !u!1 &7206378254245474685
 GameObject:
   m_ObjectHideFlags: 0

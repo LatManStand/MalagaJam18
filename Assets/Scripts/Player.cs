@@ -29,8 +29,14 @@ public class Player : MonoBehaviour
 
     public void FixedUpdate()
     {
-        // transform.LookAt(rb.position + movement);
-        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+        if (movement != Vector3.zero)
+        {
+            // transform.LookAt(rb.position + movement);
+            Vector3 endpoint = rb.position + movement * speed * Time.deltaTime;
+            endpoint.x = Mathf.Clamp(endpoint.x, Tablero.instance.minXLimit, Tablero.instance.maxXLimit);
+            endpoint.z = Mathf.Clamp(endpoint.z, Tablero.instance.minZLimit, Tablero.instance.maxZLimit);
+            rb.MovePosition(endpoint);
+        }
     }
 
     public void SetColor(Color _color)
@@ -61,6 +67,6 @@ public class Player : MonoBehaviour
     private void FlipPlayer(float x)
     {
         if (x < 0) { playerSprite.flipX = true; }
-        else { playerSprite.flipX = false; }
+        else if (x > 0) { playerSprite.flipX = false; }
     }
 }
