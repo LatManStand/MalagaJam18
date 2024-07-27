@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            spawnId = 0;
         }
         else
         {
@@ -124,6 +125,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        spawnId = playerList.Count - 1;
         UiManager.instance.StartTimer();
     }
 

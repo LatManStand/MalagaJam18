@@ -45,6 +45,13 @@ public class UiManager : MonoBehaviour
 
     public void AddPlayerToUi(Player player)
     {
+        foreach (PlayerText playerText1 in playerTexts)
+        {
+            if (playerText1.player == player)
+            {
+                return;
+            }
+        }
         GameObject text = Instantiate(textPrefab, layout.transform);
         PlayerText playerText = new PlayerText(player, text.GetComponent<ScoreText>());
         playerText.scoreText.text.color = player.color;
@@ -74,6 +81,7 @@ public class UiManager : MonoBehaviour
 
     public IEnumerator Timer()
     {
+        AudioPlayer.Instance.PlayMusic(0);
         while (time > 0)
         {
             yield return null;
