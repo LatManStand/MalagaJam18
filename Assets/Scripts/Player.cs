@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Player : MonoBehaviour
 {
@@ -32,7 +29,7 @@ public class Player : MonoBehaviour
 
     public void FixedUpdate()
     {
-       // transform.LookAt(rb.position + movement);
+        // transform.LookAt(rb.position + movement);
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
     }
 
@@ -40,6 +37,8 @@ public class Player : MonoBehaviour
     {
         color = _color;
         GetComponent<MeshRenderer>().material.color = _color;
+        token.GetComponent<MeshRenderer>().material.color = _color;
+        UiManager.instance.AddPlayerToUi(this);
         token.transform.GetChild(0).GetChild(2).GetComponent<MeshRenderer>().material.color = _color;
     }
 
@@ -61,7 +60,7 @@ public class Player : MonoBehaviour
 
     private void FlipPlayer(float x)
     {
-        if (x  < 0) { playerSprite.flipX = true; }
+        if (x < 0) { playerSprite.flipX = true; }
         else { playerSprite.flipX = false; }
     }
 }
