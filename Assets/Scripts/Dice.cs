@@ -29,6 +29,7 @@ public class Dice : MonoBehaviour
     public float stopSpeed = 3f;
 
     public bool wasKicked = false;
+    public bool firstFall = true;
 
     private void Awake()
     {
@@ -51,6 +52,11 @@ public class Dice : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (firstFall)
+        {
+            firstFall = false;
+            return;
+        }
         AudioPlayer.Instance.PlaySFX(5, gameObject);
         /*
         GameObject go = collision.gameObject;
