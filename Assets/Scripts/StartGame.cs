@@ -17,5 +17,6 @@ public class StartGame : MonoBehaviour
         tittle.SetActive(false);
         creditsButton.SetActive(false);
         this.gameObject.SetActive(false);
+        GameManager.instance.StartGame();
     }
 }

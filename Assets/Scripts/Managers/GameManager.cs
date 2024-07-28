@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
         player4.transform.DOMove(spawns[spawnId].position, 0.001f).Play();
         spawnId++;
         /**/
-        StartGame();
+        //StartGame();
 
     }
 

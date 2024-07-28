@@ -37,6 +37,7 @@ public class AudioPlayer : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
             musicAudioSource = gameObject.AddComponent<AudioSource>();
             musicAudioSource.playOnAwake = false;
+            musicAudioSource.Stop();
             //DontDestroyOnLoad(gameObject);
         }
         else
