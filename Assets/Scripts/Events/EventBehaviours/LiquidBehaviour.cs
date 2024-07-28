@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LiquidBehaviour : MonoBehaviour
@@ -11,7 +12,7 @@ public class LiquidBehaviour : MonoBehaviour
     [SerializeField]
     float initialPlayerSpeed;
     [SerializeField]
-    Player player;
+    List<Player> playersList;
     
     void Start()
     {
@@ -22,7 +23,7 @@ public class LiquidBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player = other.gameObject.GetComponent<Player>();
+            playersList.Add(other.gameObject.GetComponent<Player>());            
             other.gameObject.GetComponent<Player>().speed = slowDownValue;
         }
     }
@@ -37,7 +38,11 @@ public class LiquidBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        player.speed = initialPlayerSpeed;
+        foreach (Player p in playersList)
+        {
+            p.speed = initialPlayerSpeed;
+        }
+        playersList.Clear();
     }
 
 }

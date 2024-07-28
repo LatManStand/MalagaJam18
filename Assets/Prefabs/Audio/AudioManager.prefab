@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cdea44fab8aa44dbf0ac1b6a67deed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicClips: []
+  musicClips:
+  - Clip: {fileID: 8300000, guid: e3f1aee91bd6a58469fc092b6fd1ee3a, type: 3}
+    Volume: 1
+    minPitch: 1
+    maxPitch: 1
   sfxClips:
   - Clip: {fileID: 8300000, guid: a661b75a6a0e0794cb32dbb47c262bc4, type: 3}
     Volume: 1
@@ -82,7 +86,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

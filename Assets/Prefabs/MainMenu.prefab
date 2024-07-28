@@ -48,8 +48,7 @@ MonoBehaviour:
   character:
   - {fileID: 21300000, guid: 6624297c0a3a4264fb6ed9cf0c3fabfc, type: 3}
   - {fileID: 21300000, guid: 254e3db41595a824facd769a536dacab, type: 3}
-  - {fileID: 21300000, guid: dc4507d0b105218478d18e91330002dc, type: 3}
-  - {fileID: 21300000, guid: 036af632ea4fc0e4a980ace94a88945c, type: 3}
+  player: {fileID: 0}
 --- !u!1 &4974923723085134045
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +149,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
