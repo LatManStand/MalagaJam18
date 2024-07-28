@@ -123,8 +123,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3079579003909163552}
-        m_TargetAssemblyTypeName: StartGame, Assembly-CSharp
-        m_MethodName: 
+        m_TargetAssemblyTypeName: CreditsPanel, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tittle: {fileID: 8456108827267063715}
+  creditsButton: {fileID: 3650344806556547284}
 --- !u!1 &6206692144965174129
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ public class JoinMorePlayers : MonoBehaviour
 
         if (GameManager.instance.playerList.Contains(player.GetComponent<Player>())) { return; }
         //player.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = character[GameManager.instance.playerList.Count];
-        player.GetComponent<Player>().character = (Character)GameManager.instance.spawnId - 1;
+        player.GetComponent<Player>().character = (Character)GameManager.instance.spawnId - 2;
         StartCoroutine(KeepDoingStuff());
     }
 
