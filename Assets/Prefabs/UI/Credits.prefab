@@ -314,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sara - Music Artist
+  m_text: Sara - Music Artist - @MissOwlMusic
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
   m_sharedMaterial: {fileID: -4780767778229088826, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
@@ -448,7 +448,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ale - Programmer
+  m_text: Ale Trujillo - Programmer - @AleTrujilloDev
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
   m_sharedMaterial: {fileID: -4780767778229088826, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Albert - 3D Artist
+  m_text: Albert Garcia - 3D Artist - @Albert.garciab
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
   m_sharedMaterial: {fileID: -4780767778229088826, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Miguel - Designer/Producer
+  m_text: Miguel - Designer/Producer - @OjalaEsquinas
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
   m_sharedMaterial: {fileID: -4780767778229088826, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
@@ -885,7 +885,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -335.23108, w: 0}
+  m_margin: {x: 0, y: 0, z: -621.3822, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1167,7 +1167,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ninfa - 2D Artist
+  m_text: Ninfa Martinez - 2D Artist - @NymphaArt
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
   m_sharedMaterial: {fileID: -4780767778229088826, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ra\xFAl - Programmer"
+  m_text: Raul - Programmer - @LatManStand
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
   m_sharedMaterial: {fileID: -4780767778229088826, guid: 3b0f3238148767b4d88c4eb1170247a6, type: 2}
@@ -1364,7 +1364,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -335.23108, w: 0}
+  m_margin: {x: 0, y: 0, z: -470.28366, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
