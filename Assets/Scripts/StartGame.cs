@@ -5,6 +5,7 @@ using UnityEngine;
 public class StartGame : MonoBehaviour
 {
     public GameObject tittle;
+    public GameObject creditsButton;
 
     private void Start()
     {
@@ -14,6 +15,7 @@ public class StartGame : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         tittle.SetActive(false);
+        creditsButton.SetActive(false);
         this.gameObject.SetActive(false);
     }
 }
